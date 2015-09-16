@@ -1,0 +1,320 @@
+/****************************************
+  Inherited Syles
+*****************************************/
+
+/*
+See this explanation for details
+https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+*/
+
+ html {
+    box-sizing: border-box;
+    color: #444;
+    font: 12pt 'Open Sans', 'Lobster', Arial;
+    font-weight: 300;
+}
+
+/****************************************
+  Resets
+*****************************************/
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    color: inherit;
+    font: inherit;
+}
+ 
+/****************************************
+  Defaults
+*****************************************/
+body {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+h4 {
+	font-weight: bold;
+}
+
+/****************************************
+  Helpers
+*****************************************/
+ .cf::after {
+    content: '';
+    display: block;
+    clear: both;
+} 
+
+/****************************************
+  Layout
+*****************************************/
+
+/**
+* Header 
+**/
+
+.panel > div {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.panel.hero {
+	background: radial-gradient(rgba(0, 142, 168, 0.59), #008EA8), url(../images/bg.jpg);
+	background-size: cover;
+	position: relative;
+}
+
+.panel.hero > div {
+	height: 425px;
+}
+
+.panel.hero header {
+	position: relative;
+	height: 130px;
+}
+
+.pl-logo {
+	display: inline-block;
+	margin: 2px;
+	font: 3em 'Lobster' cursive;
+}
+
+ .pl-logo > a {
+	color: white;
+} 
+
+/**
+* Search
+**/
+
+.search-field {
+	position: absolute;
+	margin-top: 10px;
+	top: 0;
+	right: 0;
+}
+
+.search-field input {
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	color: rgba(255, 255, 255, 0.2);
+	background-color: transparent;
+	padding: 2px;
+}
+
+.search-field input::-webkit-input-placeholder { /* WebKit browsers */
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.primary-search-button {
+	color: #FEFFFF;
+	background-color: #ED4F00;
+	border-radius: 3px;
+	border: solid #ED4F00;
+	font-weight: bold;
+}
+
+/**
+* Nav
+**/
+
+.primary-nav {
+	position: absolute;
+	overflow: hidden;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	border-top: 2px solid rgba(255, 255, 255, 0.2);
+	border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+	text-transform: uppercase;
+}
+
+.primary-nav > a {
+	display: inline-block;
+	font-weight: bold;
+	color: white;
+	padding: 15px;
+}
+
+/**
+* Banner
+**/
+
+.banner {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	text-align: center;
+	bottom: 30px;
+	color: white;
+}
+
+.banner > div {
+	font-size: 30pt;
+}
+
+.banner em {
+	font-weight: bold;
+}
+
+/**
+* Primary Content
+**/
+
+.panel.primary-content > div:nth-child(2) {
+	background-color: #FFF;
+}
+
+.panel.primary-content {
+	background-color: #D7E1E7;
+	min-height: 715px;
+}
+
+/****************************************
+  Components
+*****************************************/
+
+/**
+* Services
+**/
+
+.services {
+	background-color: #D6E0E6;
+	text-align: center;
+}
+
+.services .service {
+	display: inline-block;
+	transform: translateY(-20px);
+	width: calc(32% - 10px);
+	background-color: #FFF;
+	min-height: 142px;
+	padding: 5px;
+}
+
+.services > * + * {
+	margin-left: 10px;
+}
+
+.service-help, .buy, .sell, .primary-content > div:last-child {
+	box-shadow: 1px 5px 10px -5px black;
+}
+
+.help, .buy, .sell {
+	border-top: 3px solid
+}
+
+.service.help {
+	border-color: #FF4F00;
+}
+
+.service.buy {
+	border-color: #7FCB21;
+}
+
+.service.sell {
+	border-color: #0596E0;
+}
+
+/**
+* Services Buttons
+**/
+
+.service-help-button, .service-buy-button, .service-sell-button {
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	border: 3px solid;
+
+}
+
+.service-help-button {
+	color: #FF4F00;
+}
+
+.service-buy-button {
+	color: #7FCB21;
+}
+
+.service-sell-button {
+	color: #0596E0;
+}
+
+/**
+* Aside 
+**/
+
+.primary-aside-section {
+	min-height: 300px;
+	width: calc(40% - 10px);
+	padding: 10px;
+	float: left;
+}
+
+.primary-aside-section > * + * {
+	margin-top: 10px;
+}
+
+.primary-aside-media {
+	background-color: #E8F3F9;
+	height: 85px;
+	overflow: hidden;
+}
+
+.primary-aside-graphic {
+	float: left;
+}
+
+.primary-aside-graphic > img {
+	width: 85px;
+	height: 85px;
+}
+
+.primary-aside-content {
+	background-color: #E8F3F9;
+}
+
+.primary-aside-dog-name {
+	font-weight: bold;
+	color: #2088D4;
+}
+
+.primary-aside-dog-name, .primary-aside-content {
+	margin-left: 85px;
+	padding-left: 5px;
+}
+
+/**
+* Main 
+**/
+
+.gallery {
+	overflow: hidden;
+}
+
+.main-media {
+	display: inline-block;
+	width: 160px;
+	margin: 10px;
+	vertical-align: top;
+}
+
+.main-graphic > img {
+	width: 160px;
+	height: 150px;
+	display: block;
+}
+
+.main-dog-name {
+	background-color: #8CD133;
+	width: 160px;
+	padding-left: 5px;
+}
+
+.main-content {
+	background-color: #E3EFD5;
+	padding: 5px;
+}
